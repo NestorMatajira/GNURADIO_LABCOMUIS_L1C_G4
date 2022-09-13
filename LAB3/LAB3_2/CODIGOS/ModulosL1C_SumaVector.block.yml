@@ -1,0 +1,31 @@
+id: ModulosL1C_SumaVector
+label: SumaVector
+category: '[ModulosL1C]'
+
+templates:
+  imports: import ModulosL1C
+  make: ModulosL1C.SumaVector(${Param1})
+
+#  Make one 'parameters' list entry for every parameter you want settable from the GUI.
+#     Keys include:
+#     * id (makes the value accessible as \$keyname, e.g. in the make entry)
+#     * label (label shown in the GUI)
+#     * dtype (e.g. int, float, complex, byte, short, xxx_vector, ...)
+parameters:
+- id: Param1
+  label: l_vect
+  dtype: int
+
+inputs:
+- label: entrada
+  dtype: float
+  vlen: ${Param1}
+
+
+outputs:
+- label: Salida
+  domain: float
+
+#  'file_format' specifies the version of the GRC yml format used in the file
+#  and should usually not be changed.
+file_format: 1
